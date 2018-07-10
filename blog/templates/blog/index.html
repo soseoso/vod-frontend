@@ -1,2 +1,17 @@
+<table>
+    <tbody>
+        {% for post in post_list %}
+            <tr>
+                <td>
+                    <a href="{{ post.get_absolute_url }}">
+                        {{ post.title }}
+                    </a>
+                </td>
+            </tr>
+        {% endfor %}
+    </tbody>
+</table>
 
-blog/index.html
+<hr/>
+
+<a href="{% url 'blog:post_new' %}">새 글쓰기</a>
