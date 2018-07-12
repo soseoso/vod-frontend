@@ -15,7 +15,6 @@ post_edit = UpdateView.as_view(model=Post, fields='__all__')
 class PostDeleteView(DeleteView):
     model=Post
     success_url=reverse_lazy('blog:index')
-
 post_delete = PostDeleteView.as_view()
 
 class CommentCreateView(CreateView):
@@ -46,5 +45,4 @@ class CommentDeleteView(DeleteView):
 
     def get_success_url(self):
         return resolve_url(self.object.post)
-
 comment_delete = CommentDeleteView.as_view()
